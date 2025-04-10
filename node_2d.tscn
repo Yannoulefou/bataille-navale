@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://brg30j7672dyl"]
+
+[ext_resource type="Script" uid="uid://bghe7jjf1rh0" path="res://character_body_2d.gd" id="1_detpj"]
+[ext_resource type="Texture2D" uid="uid://dejhcv6pgesmn" path="res://icon.svg" id="1_efih3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_luanu"]
+distance = -604.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk1mo"]
+size = Vector2(127, 127)
+
+[node name="Exemple Body" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_luanu")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_detpj")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(237, 152)
+texture = ExtResource("1_efih3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(236.5, 152.5)
+shape = SubResource("RectangleShape2D_yk1mo")
